@@ -30,7 +30,7 @@
     src: url('assets/fonts/jost-latin.woff2') format('woff2');
 }
 
-/* Íconos: Phosphor recortado a los 18 glifos que usa la página (2.7 KB en lugar de 148 KB).
+/* Íconos: Phosphor recortado a los 21 glifos que usa la página (3 KB en lugar de 148 KB).
    Si necesitas un ícono nuevo: agrega su regla ::before abajo y regenera el subconjunto de la fuente
    (pyftsubset sobre Phosphor.woff2), o enlaza la hoja completa de Phosphor Icons. */
 @font-face {
@@ -60,6 +60,9 @@
 .ph-wrench::before { content: "\e5d4"; }
 .ph-x::before { content: "\e4f6"; }
 .ph-warning-circle::before { content: "\e4e2"; }
+.ph-instagram-logo::before { content: "\e2d0"; }
+.ph-facebook-logo::before { content: "\e226"; }
+.ph-tiktok-logo::before { content: "\eaf2"; }
 
 /* ───────────────────────── 1. TOKENS ───────────────────────── */
 :root {
@@ -996,6 +999,16 @@ html.anim .expand-cap { opacity: 0; }
     .footer-grid { grid-template-columns: 1.6fr 1fr 1fr; }
     .footer-brand { grid-column: auto; }
 }
+
+/* Redes sociales (menú móvil, contacto y pie de página) */
+.social { display: flex; gap: .75rem; }
+.social a {
+    display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%;
+    border: 1px solid var(--line-strong); background: rgba(255, 255, 255, .03);
+    font-size: 1.35rem; color: var(--text);
+    transition: background-color .35s, color .35s, border-color .35s, translate .5s var(--ease-out);
+}
+.social a:hover, .social a:focus-visible { background: var(--rose); border-color: var(--rose); color: var(--on-rose); translate: 0 -3px; }
 
 /* ───────────────────────── 19. BOTÓN FLOTANTE WHATSAPP ───────────────────────── */
 .wa-float {
